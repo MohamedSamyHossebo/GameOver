@@ -1,0 +1,27 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="gamePic">
+                <img class="w-100" [src]="gameDetails.thumbnail" [alt]="gameDetails.title">
+                <div class="py-3">
+                    <h3 class="badge text-warning">{{gameDetails.genre}}</h3>
+                    <h3 class="badge puplisher ">{{gameDetails.publisher}}</h3>
+                    <h3 class="badge">{{gameDetails.platform}}</h3>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="gameInfo">
+                <h1 class="text-white fw-semibold fa">{{gameDetails.title}}</h1>
+                <p class="">{{gameDetails.short_description}}</p>
+                <h2 class="badge fs-6">Release Date <i class="fa-regular fa-calendar-days text-warning"></i> : <span
+                        class="text-warning badge">{{gameDetails.release_date}}</span> </h2><br>
+                <a class="btn btn-dark badge fs-6" style="text-decoration: none; color: white;" [href]="gameDetails.game_url"
+                    target="_blank">Game Link <i class="fa-solid fa-up-right-from-square"></i></a>
+                    <p class="text-muted py-2"><span class="text-white badge fs-6">Description : </span><br>{{gameDetails.description}}</p>
+
+            </div>
+        </div>
+    </div>
+</div>

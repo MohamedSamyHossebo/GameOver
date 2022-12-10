@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+$bgColor: #2D2F34;
+$btnColor: #4799EB;
+$fontColor: #939393;
+$secondFontColor: #49ACFF;
+$secondbtnColor: #FFC107;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: $bgColor;
+    font-family: sans-serif;
+    color: $fontColor;
+
+    #login {
+        margin-top: 50px;
+
+        h2 {
+            font-family: 'Press Start 2P', cursive;
+
+        }
+    }
+
+    #browse {
+        width: 100%;
+        height: 30rem;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), url(./assets/pics/1289354.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: 4rem;
+
+        .browse-data {
+
+            h1,
+            h4 {
+                font-family: sans-serif;
+            }
+
+            .browse-button {
+                display: flex;
+                justify-content: center;
+                padding-top: 20px;
+
+                button {
+                    background-color: transparent;
+                }
+
+                button:hover {
+                    background-color: $secondbtnColor;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    #recommendations {
+        width: 100%;
+        height: 30rem;
+
+        .card {
+            display: flex;
+            align-items: center;
+            width: 25rem !important;
+            background-color: #191a1c;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transition: all 0.35s ease-in-out;
+            width: 27rem !important;
+            height: 100%;
+        }
+
+    }
+
+    #all {
+        margin-top: 4rem;
+        h6{
+            font-family: 'Press Start 2P', cursive;
+            font-size: 8px;
+        }
+
+        .platform {
+            color: #AE0061;
+        }
+        .genre{
+            color: white;
+        }
+
+        .showMore {
+            button {
+                background-color: transparent;
+                color: white;
+            }
+
+            button:hover {
+                background-color: $secondbtnColor;
+                color: white;
+            }
+        }
+
+        .gameCard {
+            display: flex;
+            align-items: center;
+            background-color: #232528;
+            cursor: pointer;
+            margin-bottom: 25px;
+        }
+
+        .gameCard:hover {
+            transition: all 0.35s ease-in-out;
+            width: 20rem !important;
+            background-color: #FFC107;
+            
+        }
+        
+    }
+}

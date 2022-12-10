@@ -1,0 +1,33 @@
+<section *ngIf="recommendationGames.length" id="browse">
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="browse-data py-5">
+                    <h1 class="text-center text-light"> Find & track the best <span
+                            class="text-warning">free-to-play</span> games</h1>
+                    <h4 class="text-center">Track what you've played and search for what to play next! Plus get free
+                        premium loot!</h4>
+                    <div class="browse-button">
+                        <button *ngIf="!isLogin" class="btn btn-secondary " routerLink="/login">Browse Games</button>
+                        <button *ngIf="isLogin" class="btn btn-secondary " routerLink="/all">Browse Games</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section *ngIf="recommendationGames.length" id="recommendations">
+    <div class="container py-5">
+        <div class="row">
+            <div *ngFor="let data of recommendationGames" class="col-md-4 ">
+                <div class="card" style="width: 18rem;">
+                    <img [src]="data.thumbnail" class="card-img-top" [alt]="data.title">
+                    <div class="card-body">
+                        <p class="card-text text-white">{{data.title}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-loading *ngIf="recommendationGames.length==0"></app-loading>

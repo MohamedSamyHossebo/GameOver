@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <img src="./assets/pics/logo.png"   routerLink="home" alt="Logo" width="70" height="50"
+            class="icon d-inline-block align-text-top">
+        <a class="navbar-brand text-warning" routerLink="home">Game<span>Over</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a  class="nav-link active" routerLink="home" aria-current="page">Home</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item">
+                    <a  class="nav-link" routerLink="all">All</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Platforms
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="pc"  class="dropdown-item">PC</a></li>
+                        <li><a routerLink="browser"  class="dropdown-item">Browser</a></li>
+                    </ul>
+                </li>
+                <li *ngIf="isLogin" class="nav-item dropdown">
+                    <a  class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Sort-by
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="releasedate" class="dropdown-item">Release Date</a></li>
+                        <li><a routerLink="popularity" class="dropdown-item">Popularity</a></li>
+                        <li><a routerLink="alphabetical" class="dropdown-item">Alphabetical</a></li>
+                        <li><a routerLink="relevance" class="dropdown-item">Relevance</a></li>
+                    </ul>
+                </li>
+                <li *ngIf="isLogin" class="nav-item dropdown">
+                    <a  class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Category
+                    </a>
+                    <ul  class="dropdown-menu">
+                        <li><a routerLink="racing" class="dropdown-item">Racing</a></li>
+                        <li><a routerLink="sports" class="dropdown-item">Sports</a></li>
+                        <li><a routerLink="social" class="dropdown-item">Social</a></li>
+                        <li><a routerLink="shooter" class="dropdown-item">Shooter</a></li>
+                        <li><a routerLink="openworld" class="dropdown-item">Open World</a></li>
+                        <li><a routerLink="zombie" class="dropdown-item">Zombie</a></li>
+                        <li><a routerLink="fantasy" class="dropdown-item">Fantasy</a></li>
+                        <li><a routerLink="actionrpg" class="dropdown-item">Rpg</a></li>
+                        <li><a routerLink="action" class="dropdown-item">Action</a></li>
+                        <li><a routerLink="flight" class="dropdown-item">Flight</a></li>
+                        <li><a routerLink="battleroyale" class="dropdown-item">Battle royale</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-unstyled d-flex aling-items-center mb-0">
+                <li>
+                    <a *ngIf="!isLogin" class="nav-link mx-2" routerLink="register">Register</a>
+                </li>
+                <li>
+                    <a *ngIf="!isLogin" class="nav-link mx-2" routerLink="login">Login</a>
+                </li>
+                <li>
+                    <a *ngIf="isLogin" routerLink="logout" (click)="signOut()" class="nav-link mx-2">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
