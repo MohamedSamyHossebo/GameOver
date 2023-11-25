@@ -1,0 +1,36 @@
+<section id="all">
+    <div class="container py-5">
+        <div *ngIf=" allGames" class="row">
+            <div *ngFor="let data of allGames|slice:0:count*20" class="col-lg-3">
+                <a [routerLink]="['/gamesdetails/',data.id]" style="text-decoration:none;color: white;">
+                    <div class="card gameCard " style="width: 18rem;">
+                        <div class="gameImg">
+                            <img [src]="data.thumbnail" class="card-img-top" [alt]="data.title">
+                        </div>
+                        <div class="gameBody">
+                            <div class="text-center">
+                                <h6 class="card-text text-white p-2">{{data.title}}</h6>
+                                <span class="platform">{{data.platform}}</span>
+                            </div>
+                            <p class="text-muted text-center badge p-2">{{data.publisher}}</p>
+                            <div class="gameType text-center badge">
+                                <span class="badge text-center">{{data.genre}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div *ngIf=" allGames" class="row py-5">
+            <div class="col-md-12">
+                <div class="showMore d-flex justify-content-center">
+                    <button *ngIf="count*4<allGames.length" (click)="count=count+1" class="btn btn-warning ">Show
+                        More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-loading *ngIf=" allGames.length == 0"></app-loading>
+</section>
+
